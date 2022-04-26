@@ -8,7 +8,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css">
-    <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Admintrator</title>
 </head>
 
@@ -48,10 +48,17 @@
             </div>
         </nav>
         <!-- end nav  -->
+        {{-- lấy session module đang dùng --}}
+        @php
+            $module_active = session('module_active');
+        @endphp
+
         <div id="page-body" class="d-flex">
             <div id="sidebar" class="bg-white">
                 <ul id="sidebar-menu">
-                    <li class="nav-link">
+
+                    {{-- ---------------------------DASHBOARD--------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'dashboard' ? 'active' : '' }}">
                         <a href="{{ url('dashboard') }}">
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
@@ -60,7 +67,9 @@
                         </a>
                         <i class="arrow fas fa-angle-right"></i>
                     </li>
-                    <li class="nav-link">
+
+                    {{-- ---------------------------TRANG-------------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'page' ? 'active' : '' }}">
                         <a href="{{ url('admin/page/list') }}">
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
@@ -74,7 +83,9 @@
                             <li><a href="{{ url('admin/page/list') }}">Danh sách</a></li>
                         </ul>
                     </li>
-                    <li class="nav-link">
+
+                    {{-- ---------------------------BAI VIET-------------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'post' ? 'active' : '' }}">
                         <a href="{{ url('admin/post/list') }}">
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
@@ -88,8 +99,10 @@
                             <li><a href="{{ url('admin/post/cat/add') }}">Danh mục</a></li>
                         </ul>
                     </li>
-                    <li class="nav-link active">
-                        <a href="{{url('admin/product/list')}}">
+
+                    {{-- ---------------------------SAN PHAM-------------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'product' ? 'active' : '' }}">
+                        <a href="{{ url('admin/product/list') }}">
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
                             </div>
@@ -97,13 +110,14 @@
                         </a>
                         <i class="arrow fas fa-angle-down"></i>
                         <ul class="sub-menu">
-                            <li><a href="{{url('admin/product/add')}}">Thêm mới</a></li>
-                            <li><a href="{{url('admin/product/list')}}">Danh sách</a></li>
-                            <li><a href="{{url('admin/product/cat/list')}}">Danh mục</a></li>
+                            <li><a href="{{ url('admin/product/add') }}">Thêm mới</a></li>
+                            <li><a href="{{ url('admin/product/list') }}">Danh sách</a></li>
+                            <li><a href="{{ url('admin/product/cat/list') }}">Danh mục</a></li>
                         </ul>
                     </li>
-                    <li class="nav-link">
-                        <a href="{{url('admin/orders/list')}}">
+                    {{-- ---------------------------BAN HANG-------------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'order' ? 'active' : '' }}">
+                        <a href="{{ url('admin/orders/list') }}">
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
                             </div>
@@ -111,11 +125,13 @@
                         </a>
                         <i class="arrow fas fa-angle-right"></i>
                         <ul class="sub-menu">
-                            <li><a href="{{url('admin/orders/list')}}">Đơn hàng</a></li>
+                            <li><a href="{{ url('admin/orders/list') }}">Đơn hàng</a></li>
                         </ul>
                     </li>
-                    <li class="nav-link">
-                        <a href="{{url('admin/user/list')}}">
+                    {{-- ---------------------------USER-------------------------------- --}}
+
+                    <li class="nav-link {{ $module_active == 'user' ? 'active' : '' }}">
+                        <a href="{{ url('admin/user/list') }}">
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
                             </div>
@@ -124,8 +140,8 @@
                         <i class="arrow fas fa-angle-right"></i>
 
                         <ul class="sub-menu">
-                            <li><a href="{{url('admin/user/add')}}">Thêm mới</a></li>
-                            <li><a href="{{url('admin/user/list')}}">Danh sách</a></li>
+                            <li><a href="{{ url('admin/user/add') }}">Thêm mới</a></li>
+                            <li><a href="{{ url('admin/user/list') }}">Danh sách</a></li>
                         </ul>
                     </li>
 

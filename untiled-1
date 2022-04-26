@@ -1,13 +1,28 @@
-# check list
+# check list tổng quát
 
 1 route
 2 adminUserController@add
 3 views
-4 ghep giao dien
-5 xu lis submit
-
-#các bước xóa 1 user
+4 ghép UX
+5 xử lí submit qua controller hoặc  model
+------------------------------------------------------USER MODULE-----------------------------------------------------------------------------------------------------------
+#I.các bước xóa 1 user
 1 . tạo route trong middleware group điều hướng tới  adminUserController@ delete
-2 . tạo function delete có tham số
+2 . tạo function delete có tham số, set giá tri name để kéo giá trị về bằng $request->input('name')
+3. truyền tham số từ input qua controller
+4. xử lý controller,  so sánh với người đang đăng nhập và xử lý xóa bằng User::delete() , or softDeletes()
 
+#II. chia 2 trường hợp khi kich vào tab trạng thái
+1.request()->fullUrlWithQuery(['status' => 'active'])
+chỉ đưa ra hành động xóa tạm thời tren views
 
+2.request()->fullUrlWithQuery(['status' => 'trash'])
+đưa ra 2 hành động :
+                1. xóa vĩnh viễn
+                2. khôi phục
+3.xử lý ở selectbox tạo 1 list_act=["", ""] , khi ở bình thường nó chỉ chứa delete action
+                            khi ở trạng thái trash chứa restore và forceDelete
+
+#III.cập nhật thông tin user
+1. tạo url gán vào hrep cho nút edit  và edit action trong controller
+2.

@@ -21,17 +21,24 @@
             <div class="card-body">
                 <div class="analytic">
                     {{-- tạo url hiện tại kèm tham số --}}
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'active']) }}" class="text-primary">Kích hoạt
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'active']) }}" class="text-primary">Đã kích
+                        hoạt
                         <span class="text-muted">({{ $count[0] }})</span></a>
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'trash']) }}" class="text-primary">Vô hiệu
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'trash']) }}" class="text-primary"> Đang vô
+                        hiệu
                         hóa<span class="text-muted">({{ $count[1] }})</span></a>
                 </div>
+
+                {{-- FORM --}}
                 <form action="{{ url('admin/user/action') }}" method="">
                     <div class="form-action form-inline py-3">
+                        {{-- name="act" để lấy những gì nhận được trong $list_act bên dưới sau khi giải nén thành $k => $act và gửi qua @action --}}
                         <select class="form-control mr-1" name="act" id="">
                             <option>Chọn</option>
-                            <option value="delete">Xóa</option>
-                            <option value="restore">Khôi phục</option>
+                            {{-- duyệt theo value của $list_act được chia trong AdminUserCOntroller@list --}}
+                            @foreach ($list_act as $k => $act)
+                                <option value="{{ $k }}">{{ $act }}</option>
+                            @endforeach
                         </select>
                         <input type="submit" name="btn-search" value="Áp dụng" class="btn btn-primary">
                     </div>
@@ -61,8 +68,8 @@
                                     @endphp
                                     <tr>
                                         <td>
-                                            {{-- name="list_check[]  để lưu nhưng gì đã check --}}
-                                            <input type="checkbox" name="list_check[]" value="{{$user->id}}">
+                                            {{-- name="list_check[]  để lưu nhưng gì đã check gửi qua @action --}}
+                                            <input type="checkbox" name="list_check[]" value="{{ $user->id }}">
                                         </td>
                                         <th scope="row">{{ $t }}</th>
                                         <td>{{ $user->name }}</td>
@@ -70,9 +77,10 @@
                                         <td>Admintrator</td>
                                         <td>{{ $user->created_at }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button"
-                                                data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                    class="fa fa-edit"></i></a>
+                                            <a href="{{ route('user.edit', $user->id) }}"
+                                                class="btn btn-success btn-sm rounded-0 text-white" type="button"
+                                                data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="fa fa-edit"></i></a>
                                             {{-- nếu là người đăng nhập thì không được xóa --}}
                                             @if (Auth::id() != $user->id)
                                                 <a href="{{ route('delete_user', $user->id) }}"
@@ -94,6 +102,8 @@
                         </tbody>
                     </table>
                 </form>
+                {{-- END-FORM --}}
+
                 {{ $users->links() }}
             </div>
         </div>
