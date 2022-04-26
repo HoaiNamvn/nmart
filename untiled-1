@@ -1,0 +1,13 @@
+# check list
+
+1 route
+2 adminUserController@add
+3 views
+4 ghep giao dien
+5 xu lis submit
+
+#các bước xóa 1 user
+1 . tạo route trong middleware group điều hướng tới  adminUserController@ delete
+2 . tạo function delete có tham số
+
+
