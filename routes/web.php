@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProductController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', 'DashboardController@show');
     Route::get('admin', 'DashboardController@show');
 
-    #--------------UserModule------------------#
+    #--------------User-Module------------------#
     #user-list
     Route::get('admin/user/list', 'AdminUserController@list');
     #user-add
@@ -39,4 +40,15 @@ Route::middleware('auth')->group(function () {
     #user-edit
     Route::get('admin/user/edit/{id}', 'AdminUserController@edit')->name('user.edit');
     Route::post('admin/user/update{id}', 'AdminUserController@update')->name('user.update');
+
+    #--------------Order-Module------------------#
+    Route::get('admin/order/list', 'AdminOrderController@list');
+
+    #--------------Product-Module------------------#
+
+    Route::get('admin/product/list', 'AdminProductController@list');
+    Route::get('admin/product/add', 'AdminProductController@add');
+    Route::post('admin/product/store', 'AdminProductController@store');
+    Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('product_delete');
+    Route::get('admin/product/action', 'AdminProductController@action');
 });

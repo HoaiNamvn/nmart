@@ -40,6 +40,7 @@
                                 <option value="{{ $k }}">{{ $act }}</option>
                             @endforeach
                         </select>
+                        {{-- thực hiện hành vi đẩy form  action --}}
                         <input type="submit" name="btn-search" value="Áp dụng" class="btn btn-primary">
                     </div>
                     <table class="table table-striped table-checkall">
@@ -84,7 +85,7 @@
                                             {{-- nếu là người đăng nhập thì không được xóa --}}
                                             @if (Auth::id() != $user->id)
                                                 <a href="{{ route('delete_user', $user->id) }}"
-                                                    onclick="return confirm('Bạn có muốn xóa không ')"
+
                                                     class="btn btn-danger btn-sm rounded-0 text-white" type="button"
                                                     data-toggle="tooltip" data-placement="top" title="Delete"><i
                                                         class="fa fa-trash"></i></a>

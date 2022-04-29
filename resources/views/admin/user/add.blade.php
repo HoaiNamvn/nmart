@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input class="form-control" type="text" name="email" id="email">
+                        <input class="form-control" type="email" name="email" id="email">
                         @error('email')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
