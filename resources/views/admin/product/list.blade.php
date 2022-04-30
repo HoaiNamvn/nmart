@@ -11,9 +11,8 @@
                 <h5 class="m-0 ">商品リスト</h5>
                 <div class="form-search form-inline">
                     <form action="#" class="d-flex">
-                        <input type="" class="form-control form-search" name="keyword" placeholder="商品名入力">
-                        <input type="submit" name="btn-search" value="{{ request()->input('keyword') }}"
-                            class="btn btn-primary">
+                        <input type="text" class="form-control form-search" name="keyword" value="{{ request()->input('keyword') }}" placeholder="商品名入力">
+                        <input type="submit" name="btn-search" value="tìm kiếm"  class="btn btn-primary">
                     </form>
                 </div>
             </div>
@@ -28,15 +27,16 @@
                 </div>
 
                 <form action="{{ url('admin/product/action') }}" method="">
+
                     <div class="form-action form-inline py-3">
-                        <select class="form-control mr-1" id="">
-                            <option active>chọn </option>
+                        <select class="form-control mr-1" name="act" id="">
+                            <option active>作業選択 </option>
                             {{-- duyệt theo value của $list_act được chia trong AdminProductCOntroller@list --}}
                             @foreach ($list_act as $k => $act)
-                                <option value="{{ $k }}">{{ $act }}</option>
-                            @endforeach
+                            <option value="{{ $k }}">{{ $act }}</option>
+                        @endforeach
                         </select>
-                        <input type="submit" name="btn-search" value="適用" class="btn btn-primary">
+                        <input type="submit" name="btn-search" value="áp dụng" class="btn btn-primary">
                     </div>
                     <table class="table table-striped table-checkall">
                         <thead>
@@ -44,7 +44,7 @@
                                 <th scope="col">
                                     <input name="checkall" type="checkbox">
                                 </th>
-                                <th scope="col">#</th>
+                                <th scope="col">No</th>
                                 <th scope="col">イメージ</th>
                                 <th scope="col">商品名</th>
                                 <th scope="col">値段</th>

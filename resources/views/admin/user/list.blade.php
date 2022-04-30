@@ -12,8 +12,7 @@
                 <div class="form-search form-inline ">
                     <form action="#" class="d-flex">
                         {{-- cho  value = {{request()->input('keywork')} để ô tìm kiếm phần placeholder được hiện ra keyword đã tìm kiếm --}}
-                        <input type="text" class="form-control form-search" name="keyword"
-                            value="{{ request()->input('keyword') }}" placeholder="Tìm kiếm">
+                        <input type="text"  name="keyword" value="{{ request()->input('keyword') }}" placeholder="Tìm kiếm" class="form-control form-search">
                         <input type="submit" name="btn-search" value="Tìm kiếm" class="btn btn-primary">
                     </form>
                 </div>
@@ -85,7 +84,6 @@
                                             {{-- nếu là người đăng nhập thì không được xóa --}}
                                             @if (Auth::id() != $user->id)
                                                 <a href="{{ route('delete_user', $user->id) }}"
-
                                                     class="btn btn-danger btn-sm rounded-0 text-white" type="button"
                                                     data-toggle="tooltip" data-placement="top" title="Delete"><i
                                                         class="fa fa-trash"></i></a>

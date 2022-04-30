@@ -26,31 +26,29 @@ class AdminProductController extends Controller
         $count = [$count_product_active, $count_product_trash];
         //chia 2 truong hợp khi ấn vào danh mục
         #1. chung hoặc đã kích hoạt
-        $list_act = [
-            'delete' => 'xóa '
-        ];
+
+        $key = ""; // set null search key
+        if ($request->input('keyword')) {   // if true
+            $key = $request->input('keyword');
+        }  // get input form by name keyword
+        $products = Product::where('name', 'Like', "%{$key}%")->paginate(10);   // ORM
+        // $users = User::withTrashed()->where('name', 'Like', "%{$key}%")->paginate(10);   // ORM hiện cả những thành viên đã xóa tạm thời
+
         #2. đang vô hiệu hóa
         // or nếu đã xóa tạm thời
         if ($status == "trash") {
             $list_act = [
-                'restore' => 'hồi phục',
-                'forceDelete' => 'xóa vĩnh viễn'
+                'restore' => '復元',
+                'forceDelete' => '完全削除'
             ];
             $products = Product::onlyTrashed()->paginate(10);
-            return view('admin/product/list', compact('products', 'count', 'list_act'));    // compact data to view
+            // return view('admin.product.list', compact('products', 'count', 'list_act'));    // compact data to view
 
         } else {
-
-            $key = ""; // set null search key
-            if ($request->input('keyword')) {   // if true
-                $key = $request->input('keyword');
-            }  // get input form by name keyword
-            $products = Product::where('name', 'Like', "%{$key}%")->paginate(10);   // ORM
-            // $users = User::withTrashed()->where('name', 'Like', "%{$key}%")->paginate(10);   // ORM hiện cả những thành viên đã xóa tạm thời
-
+            $list_act = ['delete' => '臨時削除'];
         }
         // điều hướng và truyền dữ diệu qua view
-        return view('admin/product/list', compact('products', 'key', 'count', 'list_act'));    // compact data to view
+        return view('admin.product.list', compact('products', 'key', 'count', 'list_act'));    // compact data to view
 
     }
     function add()
@@ -100,7 +98,8 @@ class AdminProductController extends Controller
     {
         // lấy listcheck từ http
         $list_check = $request->input('list_check');
-
+        // ok da lay duoc list check
+        $act = $request->input('act');        // return $act;  //chưa lấy được act
         if (!empty($list_check)) {
             $act = $request->input('act');
             if ($act == "delete") {
@@ -120,7 +119,7 @@ class AdminProductController extends Controller
                 return  redirect('admin/product/list')->with('status', 'Bạn đã xóa vĩnh viễn sản phẩm  thành công ');
             }
         } else {
-            return  redirect('admin/product/list')->with('status', 'Bạn hảy chọn ít nhất 1 bản ghi để thực thi');
+            return  redirect('admin/product/list')->with('status', 'Bạn hảy chọn 1 bản ghi');
         }
     }
 }

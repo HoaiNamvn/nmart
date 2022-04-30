@@ -38,7 +38,7 @@ class AdminUserController extends Controller
                 'forceDelete' => 'Xóa vĩnh viễn'
             ];
             $users = User::onlyTrashed()->paginate(10);
-            return view('admin/user/list', compact('users', 'count', 'list_act'));    // compact data to view
+            return view('admin.user.list', compact('users', 'count', 'list_act'));    // compact data to view
 
         } else {
 
@@ -51,7 +51,7 @@ class AdminUserController extends Controller
 
         }
         // điều hướng và truyền dữ diệu qua view
-        return view('admin/user/list', compact('users', 'key', 'count', 'list_act'));    // compact data to view
+        return view('admin.user.list', compact('users', 'key', 'count', 'list_act'));    // compact data to view
 
     }
     function add()
