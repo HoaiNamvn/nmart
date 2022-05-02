@@ -29,6 +29,9 @@
                 <div class="form-group">
                     <label for="intro">説明</label>
                     <textarea name="description" class="form-control" id="description" cols="30" rows="5"></textarea>
+                    @error('description')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
 
@@ -58,12 +61,14 @@
                             即公開
                         </label>
                     </div>
+
                 </div>
+                <div class="form-group">
 
-                {!! Form::file('file', ['class' => 'form-control-file']) !!}
-                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                    写真 {!! Form::file('file', ['class' => 'form-control-file']) !!}
+                </div>
+                <button type="submit" class="btn btn-primary">更新</button>
                 {!! Form::close() !!}
-
 
             </div>
         </div>

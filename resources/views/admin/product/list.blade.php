@@ -11,8 +11,9 @@
                 <h5 class="m-0 ">商品リスト</h5>
                 <div class="form-search form-inline">
                     <form action="#" class="d-flex">
-                        <input type="text" class="form-control form-search" name="keyword" value="{{ request()->input('keyword') }}" placeholder="商品名入力">
-                        <input type="submit" name="btn-search" value="tìm kiếm"  class="btn btn-primary">
+                        <input type="text" class="form-control form-search" name="keyword"
+                            value="{{ request()->input('keyword') }}" placeholder="商品名入力">
+                        <input type="submit" name="btn-search" value="tìm kiếm" class="btn btn-primary">
                     </form>
                 </div>
             </div>
@@ -33,8 +34,8 @@
                             <option active>作業選択 </option>
                             {{-- duyệt theo value của $list_act được chia trong AdminProductCOntroller@list --}}
                             @foreach ($list_act as $k => $act)
-                            <option value="{{ $k }}">{{ $act }}</option>
-                        @endforeach
+                                <option value="{{ $k }}">{{ $act }}</option>
+                            @endforeach
                         </select>
                         <input type="submit" name="btn-search" value="áp dụng" class="btn btn-primary">
                     </div>
@@ -82,7 +83,8 @@
                                         @endif
 
                                         <td>
-                                            <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button"
+                                            <a href="{{ route('product_edit', $product->id) }}"
+                                                class="btn btn-success btn-sm rounded-0 text-white" type="button"
                                                 data-toggle="tooltip" data-placement="top" title="Edit"><i
                                                     class="fa fa-edit"></i></a>
                                             <a href="{{ route('product_delete', $product->id) }}"

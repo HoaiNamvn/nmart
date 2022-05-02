@@ -60,7 +60,8 @@ class AdminProductController extends Controller
         $request->validate(
             [
                 'name' => ['required', 'string', 'max:255'],
-                'value' => ['required', 'integer']
+                'value' => ['required', 'integer'],
+                'description' => ['required', 'string', 'max:1000'],
 
             ],
             [
@@ -68,7 +69,8 @@ class AdminProductController extends Controller
             ],
             [
                 'name' => '商品名',
-                'value' => '値段'
+                'value' => '値段',
+                'description' => '説明文'
 
             ]
         );
@@ -93,6 +95,11 @@ class AdminProductController extends Controller
         return redirect('admin/product/list')->with('status', " {$product->name} が削除されました。");
     }
 
+    function edit($id)
+    {
+        $product = Product::find($id);
+        return view('admin.product.edit', compact('product'));
+    }
 
     function action(Request $request)
     {
