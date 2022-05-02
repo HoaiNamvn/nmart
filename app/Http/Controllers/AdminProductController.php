@@ -31,7 +31,7 @@ class AdminProductController extends Controller
         if ($request->input('keyword')) {   // if true
             $key = $request->input('keyword');
         }  // get input form by name keyword
-        $products = Product::where('name', 'Like', "%{$key}%")->paginate(10);   // ORM
+        $products = Product::where('name', 'Like', "%{$key}%")->paginate(5);   // ORM
         // $users = User::withTrashed()->where('name', 'Like', "%{$key}%")->paginate(10);   // ORM hiện cả những thành viên đã xóa tạm thời
 
         #2. đang vô hiệu hóa
@@ -41,16 +41,16 @@ class AdminProductController extends Controller
                 'restore' => '復元',
                 'forceDelete' => '完全削除'
             ];
-            $edit_delete_btn=false;
+            $edit_delete_btn = false;
             $products = Product::onlyTrashed()->paginate(10);
             // return view('admin.product.list', compact('products', 'count', 'list_act'));    // compact data to view
 
         } else {
             $list_act = ['delete' => '臨時削除'];
-            $edit_delete_btn=true;
+            $edit_delete_btn = true;
         }
         // điều hướng và truyền dữ diệu qua view
-        return view('admin.product.list', compact('products', 'key', 'count', 'list_act','edit_delete_btn'));    // compact data to view
+        return view('admin.product.list', compact('products', 'key', 'count', 'list_act', 'edit_delete_btn'));    // compact data to view
 
     }
     function add()
@@ -59,11 +59,14 @@ class AdminProductController extends Controller
     }
     function store(Request $request)
     {
+
         $request->validate(
             [
                 'name' => ['required', 'string', 'max:255'],
                 'value' => ['required', 'integer'],
-                'description' => ['required', 'string', 'max:1000'],
+                'check_status' => ['required'],
+                'status' => ['required'],
+                'category' => ['required'],
 
             ],
             [
@@ -72,7 +75,9 @@ class AdminProductController extends Controller
             [
                 'name' => '商品名',
                 'value' => '値段',
-                'description' => '説明文'
+                'check_status' => '状態の選択',
+                'status' => '在庫の選択',
+                'category' => 'カテゴリーの選択',
 
             ]
         );
@@ -82,13 +87,51 @@ class AdminProductController extends Controller
             'name' => $request->input('name'),
             'value' => $request->input('value'),
             'description' => $request->input('description'),
-            'check_status' => "public",
+            'category'=>$request->input('category'),
+
+            'check_status' => $request->input('check_status'),
+            'status' => $request->input('status'),
             'thumbnail' => 'images/' . $file->getClientOriginalName()
         ]);
 
 
 
         return redirect('admin/product/list')->with('status', 'Đã thêm sản phẩm thành công ');
+    }
+
+    function update(Request $request, $id)
+    {
+        $request->validate(
+            [
+                'value' => ['required', 'integer'],
+                'description' => ['required', 'string', 'max:1000'],
+                'check_status' => ['required'],
+                'status' => ['required'],
+
+            ],
+            [
+                'required' => ':attribute が必要 ',
+            ],
+            [
+                'name' => '商品名',
+                'value' => '値段',
+                'description' => '説明文',
+                'check_status' => '状態の選択',
+                'status' => ['在庫の選択'],
+
+            ]
+        );
+        $file = $request->file;
+        $file->move('public/images/', $file->getClientOriginalName());
+        product::where('id', $id)->update([
+            'value' => $request->input('value'),
+            'description' => $request->input('description'),
+            'check_status' => $request->input('check_status'),
+            'status' => $request->input('status'),
+            'thumbnail' => 'images/' . $file->getClientOriginalName()
+        ]);
+
+        return redirect('admin/product/list')->with('status', "Đã chỉnh sửa sản phẩm thành công");
     }
     function delete($id)
     {

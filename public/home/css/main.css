@@ -1,0 +1,233 @@
+body{
+font-family:  sans-serif;
+font-size: 16px;
+font-weight: 600;
+line-height: 1.5;
+}
+.container{
+    width: 1170px;
+    padding: 0px 15px;
+    margin: 0px auto;
+    display: flex;
+}
+ul{
+    list-style: none;
+    padding: 0px;
+}
+/* ------header------- */
+#header{
+background-color: #282828;
+padding-top: 27px;
+padding-bottom: 10px;
+margin-bottom: 35px;
+}
+form#search{
+    position: relative;
+}
+form#search input{
+    background-color: #131619;
+    width: 248px;
+    height: 42px;
+    padding: 11px 42px 11px 15px;
+    border: none;
+    outline: none;
+    color: #909090;
+}
+form#search button{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: none;
+    color: #fff;
+    padding: 10px;
+    border: none;
+}
+form#search::placeholder{
+    color: #909090;
+}
+
+
+ul#main-menu li a{
+    padding: 5px 20px;
+    color: #eeeeee;
+    display: block;
+}
+ul#main-menu li:first-child a{
+    padding-left: 0px;
+}
+ul#main-menu li.active a{
+    color:  #4db2ec;
+    text-decoration: none;
+}
+ul#main-menu li:hover a{
+    color: #4db2ec;
+    text-decoration: none;
+}
+nav{
+    margin-top: 7px;
+    flex: 100%;
+    border-right: 10px solid #ff2d2d;
+}
+/* ---------feature-post------------ */
+#wp-feature-post{
+    margin-bottom: 20px;
+}
+.box .box-head h3{
+    display: inline-block;
+    color: #eeeeee;
+    background-color: #23282d;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 2px 12px;
+    margin-bottom: 0;
+}
+.box .box-body{   
+padding-top: 20px;
+}
+.box.feature-post .box-body{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f3f3f3;
+}
+ul.list-feature-post li{
+    flex: 360px 0 1;
+    margin-right: 20px;
+}
+ul.list-feature-post li a.post-title{
+    color: #5f5f5f;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;  
+    text-decoration: none;
+}
+ul.list-feature-post li .post-thumb{
+display: block;
+overflow: hidden;
+}
+ul.list-feature-post li .post-thumb img{
+transition: all 0.5s ease-in-out;
+}
+ul.list-feature-post li .post-thumb:hover img{
+    transform: scale(1.05);
+}
+
+a img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* -----------------------WP-CONTENT--------------------- */
+#content{
+    flex: 765px;
+    padding-right: 15px;
+}
+#sidebar{
+    flex: 375px;
+    padding-left: 15px;
+}
+.box.new-post .box-head h3{
+background: #4db2ec;
+}
+.box.new-post .box-head{
+    border-bottom: 2px solid #9bd2f3;
+}
+ul.list-post li{
+    display: flex;
+    margin-bottom: 30px;
+}
+ul.list-post li a.post-thumb{
+    display: block;
+    flex: 100%;
+    padding-right: 15px;
+}
+a.post-author{
+    font-size: 11px;
+    color: #111111;
+}
+.post-published span{
+    font-size: 11px;   
+}
+/* ------------------sidebar---------------------- */
+#sidebar a.ads{
+display: block;
+margin-bottom: 40px;
+}
+.box.top-topic .box-head h3{
+    background: #ff2d2d;
+    }
+.box.top-topic .box-head{
+        border-bottom: 2px solid #ff2d2d;
+    }
+ul.list-topic li a{
+    position: relative;
+color: #212121;
+font-size: 16px;
+display: block;
+line-height: 35px;
+    }
+ul.list-topic li a span.post-num{
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
+ul.list-topic li:hover a{
+    color: #ff2d2d;
+    text-decoration: none;
+}
+/* -----------------------footer--------------------------- */
+#footer .container{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+#footer{
+background: #2e2f30;
+padding-top: 52px ;
+padding-bottom: 75px;
+color: #f6f6f6;
+}
+#footer .container .box.logo-footer{
+    padding-right: 112px;
+}
+#footer .container .box.about-us{
+  width: 457px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#footer .container .box.follow-us{
+   padding-left: 210px;
+}
+#footer div.box-body a img{
+    width: 200px;
+    height: auto;
+    padding-top: 50px;
+}
+ul.list-social li{
+    padding-left:  10px; 
+}
+ul.list-social li a i{   
+    color: white;
+}
+ul.list-social li a:hover i{
+    color: #1668b9;
+}
+#footer .box .box-body{
+    padding-top: 40px;
+}
+/* -------coppy-right---------------- */
+#wp-coppyright{
+    background: #222527;
+    color: #eeeeee;
+    padding: 15px 80px;
+}
+#wp-coppyright .container p.coppyright{
+    font-size: 14px;
+}
+ul#footer-id li{
+    padding: 0px 20px;
+}
+ul#footer-id li a{
+    color: #eeeeee;
+}
+ul#footer-id li.active a{
+    color: #1668b9;
+}

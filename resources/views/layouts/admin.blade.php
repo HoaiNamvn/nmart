@@ -57,6 +57,17 @@
             <div id="sidebar" class="bg-white">
                 <ul id="sidebar-menu">
 
+
+
+                    {{-- ---------------------------TRANG-------------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'page' ? 'active' : '' }}">
+                        <a href="{{ url('esyo/home') }}">
+                            <div class="nav-link-icon d-inline-flex">
+                                <i class="far fa-folder"></i>
+                            </div>
+                            ホームページ に移動
+                        </a>
+                    </li>
                     {{-- ---------------------------DASHBOARD--------------------------- --}}
                     <li class="nav-link {{ $module_active == 'dashboard' ? 'active' : '' }}">
                         <a href="{{ url('dashboard') }}">
@@ -67,23 +78,6 @@
                         </a>
                         <i class="arrow fas fa-angle-right"></i>
                     </li>
-
-                    {{-- ---------------------------TRANG-------------------------------- --}}
-                    <li class="nav-link {{ $module_active == 'page' ? 'active' : '' }}">
-                        <a href="{{ url('admin/page/list') }}">
-                            <div class="nav-link-icon d-inline-flex">
-                                <i class="far fa-folder"></i>
-                            </div>
-                            Trang
-                        </a>
-                        <i class="arrow fas fa-angle-right"></i>
-
-                        <ul class="sub-menu">
-                            <li><a href="{{ url('admin/page/add') }}">Thêm mới</a></li>
-                            <li><a href="{{ url('admin/page/list') }}">Danh sách</a></li>
-                        </ul>
-                    </li>
-
                     {{-- ---------------------------BAI VIET-------------------------------- --}}
                     <li class="nav-link {{ $module_active == 'post' ? 'active' : '' }}">
                         <a href="{{ url('admin/post/list') }}">
@@ -106,7 +100,7 @@
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
                             </div>
-                            Sản phẩm
+                            商品
                         </a>
                         <i class="arrow fas fa-angle-down"></i>
                         <ul class="sub-menu">

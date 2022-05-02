@@ -13,7 +13,7 @@
                     <form action="#" class="d-flex">
                         <input type="text" class="form-control form-search" name="keyword"
                             value="{{ request()->input('keyword') }}" placeholder="商品名入力">
-                        <input type="submit" name="btn-search" value="tìm kiếm" class="btn btn-primary">
+                        <input type="submit" name="btn-search" value="探索" class="btn btn-primary">
                     </form>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                                 <option value="{{ $k }}">{{ $act }}</option>
                             @endforeach
                         </select>
-                        <input type="submit" name="btn-search" value="áp dụng" class="btn btn-primary">
+                        <input type="submit" name="btn-search" value="適用" class="btn btn-primary">
                     </div>
                     <table class="table table-striped table-checkall">
                         <thead>
@@ -51,7 +51,8 @@
                                 <th scope="col">値段</th>
                                 <th scope="col">カテゴリ</th>
                                 <th scope="col">投稿日</th>
-                                <th scope="col">状態</th>
+                                <th scope="col">在庫</th>
+                                <th scope="col">公開ステータス</th>
                                 <th scope="col">作業</th>
                             </tr>
                         </thead>
@@ -73,7 +74,7 @@
                                         <td><a href="#"><img src="{{ asset($product->thumbnail) }}" alt="" width="80"
                                                     height="100"></a></td>
                                         <td><a href="#">{{ $product->name }}</a></td>
-                                        <td>{{ $product->value }}</td>
+                                        <td>{{ $product->value }} 円</td>
                                         <td>{{ $product->category }}</td>
                                         <td>{{ $product->created_at }}</td>
                                         @if ($product->status == 'stocking')
@@ -81,23 +82,31 @@
                                         @else
                                             <td><span class="badge badge-warning">{{ $product->status }}</span></td>
                                         @endif
-                                        @if($edit_delete_btn)
 
-                                        <td>
-                                            <a href="{{ route('product_edit', $product->id) }}"
-                                                class="btn btn-success btn-sm rounded-0 text-white" type="button"
-                                                data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                    class="fa fa-edit"></i></a>
-                                            <a href="{{ route('product_delete', $product->id) }}"
-                                                onclick="return confirm('Bạn có muốn xóa không ')"
-                                                class="btn btn-danger btn-sm rounded-0 text-white" type="button"
-                                                data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                    class="fa fa-trash"></i></a>
-                                        </td>
+
+                                        @if ($product->check_status == 'public')
+                                            <td><span class="badge badge-success">{{ $product->check_status }}</span></td>
                                         @else
-                                        <td>
-                                            修正無効商品、一度、復元してください。
+                                            <td><span class="badge badge-warning">{{ $product->check_status }}</span></td>
+                                        @endif
                                         </td>
+
+                                        @if ($edit_delete_btn)
+                                            <td>
+                                                <a href="{{ route('product_edit', $product->id) }}"
+                                                    class="btn btn-success btn-sm rounded-0 text-white" type="button"
+                                                    data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                        class="fa fa-edit"></i></a>
+                                                <a href="{{ route('product_delete', $product->id) }}"
+                                                    onclick="return confirm('Bạn có muốn xóa không ')"
+                                                    class="btn btn-danger btn-sm rounded-0 text-white" type="button"
+                                                    data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </td>
+                                        @else
+                                            <td>
+                                                臨時に消された商品のため、作業ボタンがつきません。修正したい場合は復元してから、再度お試しください。
+                                            </td>
                                         @endif
                                     </tr>
                                 @endforeach

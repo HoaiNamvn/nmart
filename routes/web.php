@@ -20,8 +20,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+######### HOME-PAGE
+Route::get('esyo/home', 'HomePageController@index');
+Route::get('esyo/home', 'HomePageController@index');
+Route::get('esyo/news', 'HomePageController@news');
+Route::get('esyo/access', 'HomePageController@access');
+
+#########END HOME-PAGE
 # Xác thực người dùng đã đăng nhập chưa
 Route::middleware('auth')->group(function () {
     #--------------Dashboard------------------#
@@ -39,7 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/user/action', 'AdminUserController@action');
     #user-edit
     Route::get('admin/user/edit/{id}', 'AdminUserController@edit')->name('user_edit');
-    Route::post('admin/user/update{id}', 'AdminUserController@update')->name('user_update');
+    Route::post('admin/user/update/{id}', 'AdminUserController@update')->name('user_update');
 
     #--------------Order-Module------------------#
     Route::get('admin/order/list', 'AdminOrderController@list');
@@ -52,4 +58,5 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/product/store', 'AdminProductController@store');
     Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('product_delete');
     Route::get('admin/product/action', 'AdminProductController@action');
+    Route::post('admin/user/update/{id}', 'AdminProductController@update')->name('product_update');
 });
