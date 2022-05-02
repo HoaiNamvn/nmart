@@ -81,6 +81,7 @@
                                         @else
                                             <td><span class="badge badge-warning">{{ $product->status }}</span></td>
                                         @endif
+                                        @if($edit_delete_btn)
 
                                         <td>
                                             <a href="{{ route('product_edit', $product->id) }}"
@@ -93,6 +94,11 @@
                                                 data-toggle="tooltip" data-placement="top" title="Delete"><i
                                                     class="fa fa-trash"></i></a>
                                         </td>
+                                        @else
+                                        <td>
+                                            修正無効商品、一度、復元してください。
+                                        </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             @else

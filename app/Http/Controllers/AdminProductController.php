@@ -41,14 +41,16 @@ class AdminProductController extends Controller
                 'restore' => '復元',
                 'forceDelete' => '完全削除'
             ];
+            $edit_delete_btn=false;
             $products = Product::onlyTrashed()->paginate(10);
             // return view('admin.product.list', compact('products', 'count', 'list_act'));    // compact data to view
 
         } else {
             $list_act = ['delete' => '臨時削除'];
+            $edit_delete_btn=true;
         }
         // điều hướng và truyền dữ diệu qua view
-        return view('admin.product.list', compact('products', 'key', 'count', 'list_act'));    // compact data to view
+        return view('admin.product.list', compact('products', 'key', 'count', 'list_act','edit_delete_btn'));    // compact data to view
 
     }
     function add()
