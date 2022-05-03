@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('home/css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/global.css') }}">
+    <link rel="stylesheet" href="{{ asset('home/css/responsive.css') }}">
     <title>栄昇ラーメン屋さん </title>
 </head>
 
@@ -50,9 +51,7 @@
         <div id="footer">
             <div class="container">
                 <div class="box logo-footer">
-                    <div class="box-body">
-                        <a href=""> <img src="{{ asset('home/images/lo-go.png') }}" alt=""></a>
-                    </div>
+                    <a href=""> <img src="{{ asset('home/images/lo-go.png') }}" alt=""></a>
                 </div>
                 <div class="box about-us">
                     <div class="box-head">
@@ -60,31 +59,27 @@
                     </div>
                     <div class="box-body">
                         <p>津田沼駅の前にあるラーメン屋さん。 </p>
-                        <p>2018年に一号を並び、開店しました。 </p>
-                        <a href="#">home page</a>
+                        <p>2018年に一号店を並び、開店しました。 </p>
+                        <a href="#"> © coppyright by ナム（当店のスタッフ/a>
                     </div>
                 </div>
                 <div class="box follow-us">
                     <div class="box-head">
-                        <h3> FOLLOW </h3>
+                        <h3> FOLLOW US</h3>
                     </div>
                     <div class="box-body">
                         <ul class="list-social d-flex">
                             <ul class="list-social-media">
                                 <li><a href="" class="facebook">
                                         <i class="fab fa-facebook-f"></i>
-                                        <i class="fab fa-facebook-f"></i>
                                     </a></li>
                                 <li><a href="" class="google">
-                                        <i class="fab fa-google"></i>
                                         <i class="fab fa-google"></i>
                                     </a></li>
                                 <li><a href="" class="youtube">
                                         <i class="fab fa-youtube"></i>
-                                        <i class="fab fa-youtube"></i>
                                     </a></li>
                                 <li><a href="" class="twitter">
-                                        <i class="fab fa-twitter"></i>
                                         <i class="fab fa-twitter"></i>
                                     </a></li>
                             </ul>

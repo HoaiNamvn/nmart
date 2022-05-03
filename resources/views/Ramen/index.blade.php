@@ -11,7 +11,7 @@
                     <ul class="list-post">
                         <li>
                             <a href="" class="post-thumb">
-                                <img src="{{asset('home/images/niboshi.jpg')}}" alt="">
+                                <img src="{{ asset('home/images/niboshi.jpg') }}" alt="">
                             </a>
                             <div class="more-info">
                                 <a href="" class="post-title">業界豚骨ラーメン</a>
@@ -28,7 +28,7 @@
                         </li>
                         <li>
                             <a href="" class="post-thumb">
-                                <img src="{{asset('home/images/niboshi.jpg')}}" alt="">
+                                <img src="{{ asset('home/images/niboshi.jpg') }}" alt="">
                             </a>
                             <div class="more-info">
                                 <a href="" class="post-title">業界豚骨味噌ラーメン</a>
@@ -45,7 +45,7 @@
                         </li>
                         <li>
                             <a href="" class="post-thumb">
-                                <img src="{{asset('home/images/niboshi.jpg')}}" alt="">
+                                <img src="{{ asset('home/images/niboshi.jpg') }}" alt="">
                             </a>
                             <div class="more-info">
                                 <a href="" class="post-title">煮干しラーメン</a>
@@ -62,7 +62,7 @@
                         </li>
                         <li>
                             <a href="" class="post-thumb">
-                                <img src="{{asset('home/images/niboshi.jpg')}}" alt="">
+                                <img src="{{ asset('home/images/niboshi.jpg') }}" alt="">
                             </a>
                             <div class="more-info">
                                 <a href="" class="post-title">あごだしラーメン</a>
@@ -79,7 +79,7 @@
                         </li>
                         <li>
                             <a href="" class="post-thumb">
-                                <img src="{{asset('home/images/niboshi.jpg')}}" alt="">
+                                <img src="{{ asset('home/images/niboshi.jpg') }}" alt="">
                             </a>
                             <div class="more-info">
                                 <a href="" class="post-title">魚だし塩ラーメン</a>
@@ -96,7 +96,7 @@
                         </li>
                         <li>
                             <a href="" class="post-thumb">
-                                <img src="{{asset('home/images/niboshi.jpg')}}" alt="">
+                                <img src="{{ asset('home/images/niboshi.jpg') }}" alt="">
                             </a>
                             <div class="more-info">
                                 <a href="" class="post-title">ごまラーメン</a>
@@ -113,7 +113,7 @@
                         </li>
                         <li>
                             <a href="" class="post-thumb">
-                                <img src="{{asset('home/images/niboshi.jpg')}}" alt="">
+                                <img src="{{ asset('home/images/niboshi.jpg') }}" alt="">
                             </a>
                             <div class="more-info">
                                 <a href="" class="post-title">節仕込みラーメン</a>
@@ -130,7 +130,7 @@
                         </li>
                         <li>
                             <a href="" class="post-thumb">
-                                <img src="{{asset('home/images/niboshi.jpg')}}" alt="">
+                                <img src="{{ asset('home/images/niboshi.jpg') }}" alt="">
                             </a>
                             <div class="more-info">
                                 <a href="" class="post-title">しょっつるラーメン</a>
@@ -145,12 +145,19 @@
                                 </div>
                             </div>
                         </li>
-
                     </ul>
                 </div>
+
             </div>
+
         </div>
+
+
+
+
+
         <!-- end content  -->
+        {{-- sidebar --}}
         <div id="sidebar">
             <a href="" class="ads"><img src="" alt=""></a>
             <div class="box top-topic">
@@ -186,7 +193,29 @@
                     </ul>
                 </div>
             </div>
+            <div id="tenki" class="box top-topic">
+                <div class="box-head">
+                    <h3> 天気情報</h3>
+                </div>
+                <script src="http://apps.contents-pocket.net/widgets/weather/widget.js"></script>
+                <script>
+                    new ContentsPocketWidget.Weather().start();
+                </script>
+            </div>
+            <br>
+
+            <div id="uranai" class="box top-topic">
+                <div class="box-head">
+                    <h3> 心理や将来を占うツール</h3>
+                </div>
+                夢で見たことをキーワードで入力してみて。
+                <div style="width:160px;text-align:center;font-size:10px;">
+                    <script type="text/javascript" src="https://paferia.com/yume/blogparts/03new/yume03new.js"></script><span style="color:#999999;">夢占いパフェリア</span>
+                </div>
+            </div>
         </div>
+    </div>
+    {{-- end side bar --}}
     </div>
     <!-- end-wp-content  -->
 @endsection

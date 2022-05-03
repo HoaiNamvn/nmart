@@ -28,14 +28,14 @@ class AdminUserController extends Controller
         //chia 2 truong hợp khi ấn vào danh mục
         #1. chung hoặc đã kích hoạt
         $list_act = [
-            'delete' => 'Xóa tạm thời'
+            'delete' => '臨時削除'
         ];
         #2. đang vô hiệu hóa
         // or nếu đã xóa tạm thời
         if ($status == "trash") {
             $list_act = [
-                'restore' => 'Khôi phục',
-                'forceDelete' => 'Xóa vĩnh viễn'
+                'restore' => '復元',
+                'forceDelete' => '完全削除'
             ];
             $users = User::onlyTrashed()->paginate(10);
             return view('admin.user.list', compact('users', 'count', 'list_act'));    // compact data to view

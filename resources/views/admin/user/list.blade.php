@@ -8,24 +8,22 @@
             @endif
 
             <div class="card-header font-weight-bold d-flex justify-content-between align-items-center">
-                <h5 class="m-0 ">Danh sách thành viên</h5>
+                <h5 class="m-0 ">メンバーのリスト</h5>
                 <div class="form-search form-inline ">
                     <form action="#" class="d-flex">
                         {{-- cho  value = {{request()->input('keywork')} để ô tìm kiếm phần placeholder được hiện ra keyword đã tìm kiếm --}}
-                        <input type="text"  name="keyword" value="{{ request()->input('keyword') }}" placeholder="Tìm kiếm" class="form-control form-search">
-                        <input type="submit" name="btn-search" value="Tìm kiếm" class="btn btn-primary">
+                        <input type="text"  name="keyword" value="{{ request()->input('keyword') }}" placeholder="入力" class="form-control form-search">
+                        <input type="submit" name="btn-search" value="探索" class="btn btn-primary">
                     </form>
                 </div>
             </div>
             <div class="card-body">
                 <div class="analytic">
                     {{-- tạo url hiện tại kèm tham số --}}
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'active']) }}" class="text-primary">Đã kích
-                        hoạt
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'active']) }}" class="text-primary">活動中
                         <span class="text-muted">({{ $count[0] }})</span></a>
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'trash']) }}" class="text-primary"> Đang vô
-                        hiệu
-                        hóa<span class="text-muted">({{ $count[1] }})</span></a>
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'trash']) }}" class="text-primary">無効中
+                        <span class="text-muted">({{ $count[1] }})</span></a>
                 </div>
 
                 {{-- FORM --}}
@@ -33,14 +31,14 @@
                     <div class="form-action form-inline py-3">
                         {{-- name="act" để lấy những gì nhận được trong $list_act bên dưới sau khi giải nén thành $k => $act và gửi qua @action --}}
                         <select class="form-control mr-1" name="act" id="">
-                            <option>Chọn</option>
+                            <option>選択</option>
                             {{-- duyệt theo value của $list_act được chia trong AdminUserCOntroller@list --}}
                             @foreach ($list_act as $k => $act)
                                 <option value="{{ $k }}">{{ $act }}</option>
                             @endforeach
                         </select>
                         {{-- thực hiện hành vi đẩy form  action --}}
-                        <input type="submit" name="btn-search" value="Áp dụng" class="btn btn-primary">
+                        <input type="submit" name="btn-search" value="適用" class="btn btn-primary">
                     </div>
                     <table class="table table-striped table-checkall">
                         <thead>
@@ -49,11 +47,11 @@
                                     <input type="checkbox" name="checkall">
                                 </th>
                                 <th scope="col">#</th>
-                                <th scope="col">Họ tên</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Quyền</th>
-                                <th scope="col">Ngày tạo</th>
-                                <th scope="col">Tác vụ</th>
+                                <th scope="col">名前</th>
+                                <th scope="col">メール</th>
+                                <th scope="col">権</th>
+                                <th scope="col">登録日</th>
+                                <th scope="col">作業</th>
                             </tr>
                         </thead>
                         <tbody>

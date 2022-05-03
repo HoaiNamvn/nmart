@@ -4,7 +4,7 @@
     <div id="content" class="container-fluid">
         <div class="card">
             <div class="card-header font-weight-bold">
-                Thêm người dùng
+                ユーザー　追加
             </div>
             <div class="card-body">
 
@@ -12,28 +12,28 @@
                 <form action="{{ url('admin/user/store') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Họ và tên</label>
+                        <label for="name">名前</label>
                         <input class="form-control" type="text" name="name" id="name">
                         @error('name')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">メール</label>
                         <input class="form-control" type="email" name="email" id="email">
                         @error('email')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="password">Mật khẩu</label>
+                        <label for="password">パスワード</label>
                         <input class="form-control" type="password" name="password" id="password">
                         @error('password')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="password_confirmation"> Xác nhận mật khẩu</label>
+                        <label for="password_confirmation"> パスワードを確認のため、再入力してください。</label>
                         <input class="form-control" type="password" name="password_confirmation" id="password_confirmation">
                         @error('password_confirmation')
                             <small class="text-danger">{{ $message }}</small>
@@ -41,18 +41,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Nhóm quyền</label>
+                        <label for="">権</label>
                         <select class="form-control" id="">
-                            <option>Chọn quyền</option>
-                            <option>Danh mục 1</option>
-                            <option>Danh mục 2</option>
-                            <option>Danh mục 3</option>
-                            <option>Danh mục 4</option>
+                            <option>選択</option>
+                            <option></option>
+                            <option>データベース管理者</option>
+                            <option>店長</option>
+                            <option>アルバイト</option>
                         </select>
                     </div>
                     {{-- end form --}}
 
-                    <button type="submit" class="btn btn-primary" name="btn-add" value="thêm mới ">Thêm mới</button>
+                    <button type="submit" class="btn btn-primary" name="btn-add" value="送信 ">送信</button>
                 </form>
             </div>
         </div>
