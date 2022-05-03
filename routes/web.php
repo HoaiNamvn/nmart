@@ -26,6 +26,12 @@ Route::get('esyo/home', 'HomePageController@index');
 Route::get('esyo/home', 'HomePageController@index');
 Route::get('esyo/news', 'HomePageController@news');
 Route::get('esyo/access', 'HomePageController@access');
+Route::get('esyo/corona', 'HomePageController@corona');
+Route::get('esyo/job', 'HomePageController@job');
+Route::get('esyo/contact', 'HomePageController@contact');
+Route::get('esyo/campaign', function () {
+    return view('Ramen.campaign');
+});
 
 #########END HOME-PAGE
 # Xác thực người dùng đã đăng nhập chưa

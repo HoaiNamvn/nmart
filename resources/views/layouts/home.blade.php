@@ -35,10 +35,10 @@
                         <li><a href="{{ url('esyo/home') }}">ホームページ</a></li>
                         <li><a href="{{ url('esyo/news') }}">ニュース</a></li>
                         <li><a href="{{ url('esyo/access') }}"> アクセス</a></li>
-                        <li><a href="">キャンペーン情報</a></li>
-                        <li><a href="">コロナ対策</a></li>
-                        <li><a href="">求人情報</a></li>
-                        <li><a href="">お問い合わせ</a></li>
+                        <li><a href="{{ url('esyo/campaign') }}">キャンペーン情報</a></li>
+                        <li><a href="{{ url('esyo/corona') }}">コロナ対策</a></li>
+                        <li><a href="{{ url('esyo/job') }}">求人情報</a></li>
+                        <li><a href="{{ url('esyo/contact') }}">お問い合わせ</a></li>
                         <li><a href="{{ url('dashboard') }}">管理者向けのサイトへ</a></li>
                     </ul>
                 </nav>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="box-body">
                         <p>津田沼駅の前にあるラーメン屋さん。 </p>
-                        <p>2018年に一号を並び、開店しました。  </p>
+                        <p>2018年に一号を並び、開店しました。 </p>
                         <a href="#">home page</a>
                     </div>
                 </div>
@@ -70,18 +70,24 @@
                     </div>
                     <div class="box-body">
                         <ul class="list-social d-flex">
-                            <li>
-                                <a href=""><i class="fas fa-search"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=DEx0Bp1wD8s" target="_blank"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="fab fa-tiktok"></i></a>
-                            </li>
+                            <ul class="list-social-media">
+                                <li><a href="" class="facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a></li>
+                                <li><a href="" class="google">
+                                        <i class="fab fa-google"></i>
+                                        <i class="fab fa-google"></i>
+                                    </a></li>
+                                <li><a href="" class="youtube">
+                                        <i class="fab fa-youtube"></i>
+                                        <i class="fab fa-youtube"></i>
+                                    </a></li>
+                                <li><a href="" class="twitter">
+                                        <i class="fab fa-twitter"></i>
+                                        <i class="fab fa-twitter"></i>
+                                    </a></li>
+                            </ul>
                         </ul>
                     </div>
                 </div>

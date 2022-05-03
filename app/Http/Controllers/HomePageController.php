@@ -15,5 +15,14 @@ class HomePageController extends Controller
     function access(){
         return view('Ramen.access');
     }
+    function corona(){
+        return view('Ramen.corona');
+    }
+    function job(){
+        return view('Ramen.job');
+    }
+    function contact(){
+        return view('Ramen.contact');
+    }
 
 }

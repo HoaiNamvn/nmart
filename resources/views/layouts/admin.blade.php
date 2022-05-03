@@ -23,9 +23,9 @@
                         <i class="plus-icon fas fa-plus-circle"></i>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ url('admin/post/add') }}">Thêm bài viết</a>
-                        <a class="dropdown-item" href="{{ url('admin/post/product') }}">Thêm sản phẩm</a>
-                        <a class="dropdown-item" href="{{ url('admin/order/list') }}">Xem đơn hàng</a>
+                        <a class="dropdown-item" href="{{ url('admin/post/add') }}">新投稿</a>
+                        <a class="dropdown-item" href="{{ url('admin/post/product') }}">新商品登録</a>
+                        <a class="dropdown-item" href="{{ url('admin/order/list') }}">オーダー管理</a>
                     </div>
                 </div>
                 <div class="btn-group">
@@ -76,7 +76,6 @@
                             </div>
                             Dashboard
                         </a>
-                        <i class="arrow fas fa-angle-right"></i>
                     </li>
                     {{-- ---------------------------BAI VIET-------------------------------- --}}
                     <li class="nav-link {{ $module_active == 'post' ? 'active' : '' }}">
@@ -84,13 +83,13 @@
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
                             </div>
-                            Bài viết
+                            ポスト
                         </a>
                         <i class="arrow fas fa-angle-right"></i>
                         <ul class="sub-menu">
-                            <li><a href="{{ url('admin/post/add') }}">Thêm mới</a></li>
-                            <li><a href="{{ url('admin/post/list') }}">Danh sách</a></li>
-                            <li><a href="{{ url('admin/post/cat/add') }}">Danh mục</a></li>
+                            <li><a href="{{ url('admin/post/add') }}">新規追加</a></li>
+                            <li><a href="{{ url('admin/post/list') }}">リスト</a></li>
+                            <li><a href="{{ url('admin/post/cat/add') }}">カテゴリー</a></li>
                         </ul>
                     </li>
 
@@ -104,9 +103,9 @@
                         </a>
                         <i class="arrow fas fa-angle-down"></i>
                         <ul class="sub-menu">
-                            <li><a href="{{ url('admin/product/add') }}">Thêm mới</a></li>
-                            <li><a href="{{ url('admin/product/list') }}">Danh sách</a></li>
-                            <li><a href="{{ url('admin/product/cat/list') }}">Danh mục</a></li>
+                            <li><a href="{{ url('admin/product/add') }}">新規追加</a></li>
+                            <li><a href="{{ url('admin/product/list') }}">リスト</a></li>
+                            <li><a href="{{ url('admin/product/cat/list') }}">カテゴリー</a></li>
                         </ul>
                     </li>
                     {{-- ---------------------------BAN HANG-------------------------------- --}}
@@ -115,11 +114,11 @@
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
                             </div>
-                            Bán hàng
+                            販売
                         </a>
                         <i class="arrow fas fa-angle-right"></i>
                         <ul class="sub-menu">
-                            <li><a href="{{ url('admin/order/list') }}">Đơn hàng</a></li>
+                            <li><a href="{{ url('admin/order/list') }}">オーダー</a></li>
                         </ul>
                     </li>
                     {{-- ---------------------------USER-------------------------------- --}}
@@ -134,8 +133,8 @@
                         <i class="arrow fas fa-angle-right"></i>
 
                         <ul class="sub-menu">
-                            <li><a href="{{ url('admin/user/add') }}">Thêm mới</a></li>
-                            <li><a href="{{ url('admin/user/list') }}">Danh sách</a></li>
+                            <li><a href="{{ url('admin/user/add') }}">ユーザー登録</a></li>
+                            <li><a href="{{ url('admin/user/list') }}">リスト</a></li>
                         </ul>
                     </li>
 
