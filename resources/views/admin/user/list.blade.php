@@ -8,11 +8,11 @@
             @endif
 
             <div class="card-header font-weight-bold d-flex justify-content-between align-items-center">
-                <h5 class="m-0 ">メンバーのリスト</h5>
+                <h5 class="m-0 ">ユーザーリスト</h5>
                 <div class="form-search form-inline ">
                     <form action="#" class="d-flex">
                         {{-- cho  value = {{request()->input('keywork')} để ô tìm kiếm phần placeholder được hiện ra keyword đã tìm kiếm --}}
-                        <input type="text"  name="keyword" value="{{ request()->input('keyword') }}" placeholder="入力" class="form-control form-search">
+                        <input type="text"  name="keyword" value="{{ request()->input('keyword') }}" placeholder="キーワード入力" class="form-control form-search">
                         <input type="submit" name="btn-search" value="探索" class="btn btn-primary">
                     </form>
                 </div>
@@ -22,7 +22,7 @@
                     {{-- tạo url hiện tại kèm tham số --}}
                     <a href="{{ request()->fullUrlWithQuery(['status' => 'active']) }}" class="text-primary">活動中
                         <span class="text-muted">({{ $count[0] }})</span></a>
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'trash']) }}" class="text-primary">無効中
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'trash']) }}" class="text-primary"> 無効中
                         <span class="text-muted">({{ $count[1] }})</span></a>
                 </div>
 
@@ -50,8 +50,8 @@
                                 <th scope="col">名前</th>
                                 <th scope="col">メール</th>
                                 <th scope="col">権</th>
-                                <th scope="col">登録日</th>
-                                <th scope="col">作業</th>
+                                <th scope="col">作成日</th>
+                                <th scope="col">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -91,8 +91,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="7" class="bg-white"> không tồn tại người dùng đã tìm kiếm, vui lòng
-                                        thay thế tìm kiếm khác </td>
+                                    <td colspan="7" class="bg-white"> 探索したユーザーが見つかりませんでした </td>
                                 </tr>
                             @endif
 

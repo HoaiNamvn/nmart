@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{ asset('home/css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/global.css') }}">
-    <link rel="stylesheet" href="{{ asset('home/css/responsive.css') }}">
     <title>栄昇ラーメン屋さん </title>
 </head>
 
@@ -51,7 +50,9 @@
         <div id="footer">
             <div class="container">
                 <div class="box logo-footer">
-                    <a href=""> <img src="{{ asset('home/images/lo-go.png') }}" alt=""></a>
+                    <div class="box-body">
+                        <a href=""> <img src="{{ asset('home/images/lo-go.png') }}" alt=""></a>
+                    </div>
                 </div>
                 <div class="box about-us">
                     <div class="box-head">
@@ -60,12 +61,12 @@
                     <div class="box-body">
                         <p>津田沼駅の前にあるラーメン屋さん。 </p>
                         <p>2018年に一号店を並び、開店しました。 </p>
-                        <a href="#"> © coppyright by ナム（当店のスタッフ/a>
+                        <a href="#">home page</a>
                     </div>
                 </div>
                 <div class="box follow-us">
                     <div class="box-head">
-                        <h3> FOLLOW US</h3>
+                        <h3> FOLLOW </h3>
                     </div>
                     <div class="box-body">
                         <ul class="list-social d-flex">
@@ -76,7 +77,7 @@
                                 <li><a href="" class="google">
                                         <i class="fab fa-google"></i>
                                     </a></li>
-                                <li><a href="" class="youtube">
+                                <li><a href="https://www.youtube.com/watch?v=DEx0Bp1wD8s" target="_blank" class="youtube">
                                         <i class="fab fa-youtube"></i>
                                     </a></li>
                                 <li><a href="" class="twitter">

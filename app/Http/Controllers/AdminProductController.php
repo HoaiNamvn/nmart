@@ -96,7 +96,7 @@ class AdminProductController extends Controller
 
 
 
-        return redirect('admin/product/list')->with('status', 'Đã thêm sản phẩm thành công ');
+        return redirect('admin/product/list')->with('status', '商品の登録が完了しました。 ');
     }
 
     function update(Request $request, $id)
@@ -131,7 +131,7 @@ class AdminProductController extends Controller
             'thumbnail' => 'images/' . $file->getClientOriginalName()
         ]);
 
-        return redirect('admin/product/list')->with('status', "Đã chỉnh sửa sản phẩm thành công");
+        return redirect('admin/product/list')->with('status', "修正が完了しました");
     }
     function delete($id)
     {
@@ -156,22 +156,25 @@ class AdminProductController extends Controller
             $act = $request->input('act');
             if ($act == "delete") {
                 Product::destroy($list_check);
-                return  redirect('admin/product/list')->with('status', 'Bạn đã xóa thành công');
+                return  redirect('admin/product/list')->with('status', '削除が完了しました');
             }
             if ($act == "restore") {
                 Product::withTrashed()
                     ->whereIn('id', $list_check)
                     ->restore();
-                return  redirect('admin/product/list')->with('status', 'Bạn đã khôi phục thành công ');
+                return  redirect('admin/product/list')->with('status', '復元が完了しました ');
             }
             if ($act == "forceDelete") {
                 Product::withTrashed()
                     ->whereIn('id', $list_check)
                     ->forceDelete();
-                return  redirect('admin/product/list')->with('status', 'Bạn đã xóa vĩnh viễn sản phẩm  thành công ');
+                return  redirect('admin/product/list')->with('status', '商品を完全削除しました ');
             }
         } else {
-            return  redirect('admin/product/list')->with('status', 'Bạn hảy chọn 1 bản ghi');
+            return  redirect('admin/product/list')->with('status', '１つレコード以以上を選択してください');
         }
+    }
+    function category(){
+        return view('admin.product.category');
     }
 }

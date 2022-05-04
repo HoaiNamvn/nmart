@@ -60,6 +60,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('admin/product/list', 'AdminProductController@list')->name('product_list');
     Route::get('admin/product/add', 'AdminProductController@add');
+    Route::get('admin/product/category', 'AdminProductController@category');
     Route::get('admin/product/edit/{id}', 'AdminProductController@edit')->name('product_edit');
     Route::post('admin/product/store', 'AdminProductController@store');
     Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('product_delete');

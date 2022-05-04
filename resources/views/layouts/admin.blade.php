@@ -15,7 +15,7 @@
 <body>
     <div id="warpper" class="nav-fixed">
         <nav class="topnav shadow navbar-light bg-white d-flex">
-            <div class="navbar-brand"><a href="?">栄昇 ADMIN</a></div>
+            <div class="navbar-brand"><a href="?">経営管理</a></div>
             <div class="nav-right ">
                 <div class="btn-group mr-auto">
                     <button type="button" class="btn dropdown" data-toggle="dropdown" aria-haspopup="true"
@@ -89,7 +89,7 @@
                         <ul class="sub-menu">
                             <li><a href="{{ url('admin/post/add') }}">新規追加</a></li>
                             <li><a href="{{ url('admin/post/list') }}">リスト</a></li>
-                            <li><a href="{{ url('admin/post/cat/add') }}">カテゴリー</a></li>
+                            <li><a href="{{ url('admin/post/cat') }}">カテゴリー</a></li>
                         </ul>
                     </li>
 
@@ -105,7 +105,7 @@
                         <ul class="sub-menu">
                             <li><a href="{{ url('admin/product/add') }}">新規追加</a></li>
                             <li><a href="{{ url('admin/product/list') }}">リスト</a></li>
-                            <li><a href="{{ url('admin/product/cat/list') }}">カテゴリー</a></li>
+                            <li><a href="{{ url('admin/product/category') }}">カテゴリー</a></li>
                         </ul>
                     </li>
                     {{-- ---------------------------BAN HANG-------------------------------- --}}
@@ -128,12 +128,12 @@
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
                             </div>
-                            メンバー
+                            Users
                         </a>
                         <i class="arrow fas fa-angle-right"></i>
 
                         <ul class="sub-menu">
-                            <li><a href="{{ url('admin/user/add') }}">メンバー登録</a></li>
+                            <li><a href="{{ url('admin/user/add') }}">ユーザー登録</a></li>
                             <li><a href="{{ url('admin/user/list') }}">リスト</a></li>
                         </ul>
                     </li>

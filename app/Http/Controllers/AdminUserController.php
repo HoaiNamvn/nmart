@@ -34,7 +34,7 @@ class AdminUserController extends Controller
         // or nếu đã xóa tạm thời
         if ($status == "trash") {
             $list_act = [
-                'restore' => '復元',
+                'restore' => '復元c',
                 'forceDelete' => '完全削除'
             ];
             $users = User::onlyTrashed()->paginate(10);
@@ -68,15 +68,15 @@ class AdminUserController extends Controller
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ],
             [
-                'required' => ':attribute không được để trống ',
-                'min' => ':attribute có độ dải ít nhất là :min ký tự ',
-                'max' => ':attribute có độ dải dái nhất là :max ký tự ',
-                'confirmed' => 'xác nhận mật khẩu không thành công  '
+                'required' => ':attribute が必要 ',
+                'min' => ':attribute は最低 :min 文字',
+                'max' => ':attribute は最低 :max 文字 ',
+                'confirmed' => 'パスワードの確認用が合わなかった  '
             ],
             [
-                'name' => 'tên',
-                'email' => 'Email',
-                'password' => 'mật khẩu'
+                'name' => '名前',
+                'email' => 'メール',
+                'password' => 'パスワード'
             ]
         );
 
@@ -86,7 +86,7 @@ class AdminUserController extends Controller
             'password' => Hash::make($request->input('password'))
         ]);
 
-        return redirect('admin/user/list')->with('status', 'Đã thêm người dùng thành công ');
+        return redirect('admin/user/list')->with('status', 'ユーザー追加が完了しました ');
     }
 
     function delete($id)
@@ -95,9 +95,9 @@ class AdminUserController extends Controller
         if (Auth::id() != $id) {
             $user = User::find($id);
             $user->delete();
-            return redirect('admin/user/list')->with('status', "đã xóa người dùng tên : {$user->name} thành công");
+            return redirect('admin/user/list')->with('status', "ユーザー : {$user->name}が削除しました");
         } else {
-            return redirect('admin/user/list')->with('status', 'bạn không thể tự xóa bản thân ra khỏi hệ thống');
+            return redirect('admin/user/list')->with('status', 'あなた自身が自分の削除することはできません！');
         }
     }
 
@@ -115,24 +115,24 @@ class AdminUserController extends Controller
                 $act = $request->input('act');
                 if ($act == "delete") {
                     User::destroy($list_check);
-                    return  redirect('admin/user/list')->with('status', 'Bạn đã xóa thành công');
+                    return  redirect('admin/user/list')->with('status', '削除が完了しました');
                 }
                 if ($act == "restore") {
                     User::withTrashed()
                         ->whereIn('id', $list_check)
                         ->restore();
-                    return  redirect('admin/user/list')->with('status', 'Bạn đã khôi phục thành công ');
+                    return  redirect('admin/user/list')->with('status', 'ユーザーの復元が完了しました ');
                 }
                 if ($act == "forceDelete") {
                     User::withTrashed()
                         ->whereIn('id', $list_check)
                         ->forceDelete();
-                    return  redirect('admin/user/list')->with('status', 'Bạn đã xóa vĩnh viễn người dùng thành công ');
+                    return  redirect('admin/user/list')->with('status', 'ユーザーを完全削除しました ');
                 }
             }
-            return  redirect('admin/user/list')->with('status', 'Bạn không thể thao tác trên tài khoản của chính bạn ');
+            return  redirect('admin/user/list')->with('status', '自分自身に操作できません ');
         } else {
-            return  redirect('admin/user/list')->with('status', 'Bạn hảy chọn ít nhất 1 bản ghi để thực thi');
+            return  redirect('admin/user/list')->with('status', '1つ以上のユーザを選択してください');
         }
     }
     function edit($id)
@@ -149,14 +149,14 @@ class AdminUserController extends Controller
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ],
             [
-                'required' => ':attribute không được để trống ',
-                'min' => ':attribute có độ dải ít nhất là :min ký tự ',
-                'max' => ':attribute có độ dải dái nhất là :max ký tự ',
-                'confirmed' => 'xác nhận mật khẩu không thành công  '
+                'required' => ':attribute が必要 ',
+                'min' => ':attribute は最低 :min 文字',
+                'max' => ':attribute は最低 :max 文字 ',
+                'confirmed' => 'パスワードの確認用が合わなかった  '
             ],
             [
-                'name' => 'tên',
-                'password' => 'mật khẩu'
+                'name' => '名前',
+                'password' => 'パスワード'
             ]
         );
         User::where('id', $id)->update([
@@ -164,6 +164,6 @@ class AdminUserController extends Controller
             'password' => Hash::make($request->input('password'))
         ]);
 
-        return redirect('admin/user/list')->with('status', 'Đã cập nhật thành công');
+        return redirect('admin/user/list')->with('status', '最新情報の更新が完了しました');
     }
 }
