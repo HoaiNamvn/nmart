@@ -34,14 +34,15 @@ class AdminUserController extends Controller
         // or nếu đã xóa tạm thời
         if ($status == "trash") {
             $list_act = [
-                'restore' => '復元c',
+                'restore' => '復元',
                 'forceDelete' => '完全削除'
             ];
+            $edit_delete_btn = false;
             $users = User::onlyTrashed()->paginate(10);
-            return view('admin.user.list', compact('users', 'count', 'list_act'));    // compact data to view
+            return view('admin.user.list', compact('users', 'count', 'list_act', 'edit_delete_btn'));    // compact data to view
 
         } else {
-
+            $edit_delete_btn = true;
             $key = ""; // set null search key
             if ($request->input('keyword')) {   // if true
                 $key = $request->input('keyword');
@@ -51,7 +52,7 @@ class AdminUserController extends Controller
 
         }
         // điều hướng và truyền dữ diệu qua view
-        return view('admin.user.list', compact('users', 'key', 'count', 'list_act'));    // compact data to view
+        return view('admin.user.list', compact('users', 'key', 'count', 'list_act', 'edit_delete_btn'));    // compact data to view
 
     }
     function add()
@@ -143,6 +144,7 @@ class AdminUserController extends Controller
 
     function update($id, Request $request)
     {
+        return $request->input('name');
         $request->validate(
             [
                 'name' => ['required', 'string', 'max:255'],
@@ -159,6 +161,7 @@ class AdminUserController extends Controller
                 'password' => 'パスワード'
             ]
         );
+
         User::where('id', $id)->update([
             'name' => $request->input('name'),
             'password' => Hash::make($request->input('password'))

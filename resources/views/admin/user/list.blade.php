@@ -12,7 +12,8 @@
                 <div class="form-search form-inline ">
                     <form action="#" class="d-flex">
                         {{-- cho  value = {{request()->input('keywork')} để ô tìm kiếm phần placeholder được hiện ra keyword đã tìm kiếm --}}
-                        <input type="text"  name="keyword" value="{{ request()->input('keyword') }}" placeholder="キーワード入力" class="form-control form-search">
+                        <input type="text" name="keyword" value="{{ request()->input('keyword') }}" placeholder="キーワード入力"
+                            class="form-control form-search">
                         <input type="submit" name="btn-search" value="探索" class="btn btn-primary">
                     </form>
                 </div>
@@ -75,24 +76,30 @@
                                         <td>Admintrator</td>
                                         <td>{{ $user->created_at }}</td>
                                         <td>
-                                            <a href="{{ route('user_edit', $user->id) }}"
-                                                class="btn btn-success btn-sm rounded-0 text-white" type="button"
-                                                data-toggle="tooltip" data-placement="top" title="Edit">
-                                                <i class="fa fa-edit"></i></a>
-                                            {{-- nếu là người đăng nhập thì không được xóa --}}
-                                            @if (Auth::id() != $user->id)
-                                                <a href="{{ route('delete_user', $user->id) }}"
-                                                    class="btn btn-danger btn-sm rounded-0 text-white" type="button"
-                                                    data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                        class="fa fa-trash"></i></a>
-                                            @endif
+                                            @if ($edit_delete_btn)
+                                                <a href="{{ route('user_edit', $user->id) }}"
+                                                    class="btn btn-success btn-sm rounded-0 text-white" type="button"
+                                                    data-toggle="tooltip" data-placement="top" title="Edit">
+                                                    <i class="fa fa-edit"></i></a>
+                                                {{-- nếu là người đăng nhập thì không được xóa --}}
+                                                @if (Auth::id() != $user->id)
+                                                    <a href="{{ route('user_delete', $user->id) }}"
+                                                        class="btn btn-danger btn-sm rounded-0 text-white" type="button"
+                                                        data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                            class="fa fa-trash"></i></a>
+                                                @endif
+                                            @else
+                                        <td>
+                                            臨時に消された商品のため、作業ボタンがつきません。修正したい場合は復元してから、再度お試しください。
                                         </td>
-                                    </tr>
-                                @endforeach
-                            @else
-                                <tr>
-                                    <td colspan="7" class="bg-white"> 探索したユーザーが見つかりませんでした </td>
+                                @endif
+                                </td>
                                 </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="7" class="bg-white"> 探索したユーザーが見つかりませんでした </td>
+                            </tr>
                             @endif
 
                         </tbody>

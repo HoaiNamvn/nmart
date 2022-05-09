@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-######### HOME-PAGE
+######### HOME-PAGE  #########
 Route::get('esyo/home', 'HomePageController@index');
 Route::get('esyo/home', 'HomePageController@index');
 Route::get('esyo/news', 'HomePageController@news');
@@ -33,8 +33,10 @@ Route::get('esyo/campaign', function () {
     return view('Ramen.campaign');
 });
 
-#########END HOME-PAGE
-# Xác thực người dùng đã đăng nhập chưa
+#########  END HOME-PAGE   #########
+
+######### SYSTEM CONTROL  #########
+# authen user  logined ?
 Route::middleware('auth')->group(function () {
     #--------------Dashboard------------------#
     Route::get('dashboard', 'DashboardController@show');
@@ -47,7 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/user/add', 'AdminUserController@add');
     Route::post('admin/user/store', 'AdminUserController@store');
     #user-delete
-    Route::get('admin/user/delete/{id}', 'AdminUserController@delete')->name('delete_user');
+    Route::get('admin/user/delete/{id}', 'AdminUserController@delete')->name('user_delete');
     Route::get('admin/user/action', 'AdminUserController@action');
     #user-edit
     Route::get('admin/user/edit/{id}', 'AdminUserController@edit')->name('user_edit');
@@ -67,3 +69,4 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/product/action', 'AdminProductController@action');
     Route::post('admin/user/update/{id}', 'AdminProductController@update')->name('product_update');
 });
+######### END SYSTEM CONTROL  #########

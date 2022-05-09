@@ -145,3 +145,8 @@ ul#sidebar-menu * {
     right: -5px;
     color: #8c8c8c;
 }
+.card-body{
+    color: #0061f2;
+    background-color: rgb(165, 223, 184);
+}
+

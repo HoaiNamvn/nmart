@@ -14,8 +14,8 @@
 
 <body>
     <div id="warpper" class="nav-fixed">
-        <nav class="topnav shadow navbar-light bg-white d-flex">
-            <div class="navbar-brand"><a href="?">経営管理</a></div>
+        <nav class="topnav shadow navbar-light bg-success d-flex">
+            <div class="navbar-brand"><a href="?" style="color: black">システム管理</a></div>
             <div class="nav-right ">
                 <div class="btn-group mr-auto">
                     <button type="button" class="btn dropdown" data-toggle="dropdown" aria-haspopup="true"
@@ -34,7 +34,6 @@
                         {{ Auth::user()->name }}
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Tài khoản</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
