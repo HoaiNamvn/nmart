@@ -67,6 +67,6 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/product/store', 'AdminProductController@store');
     Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('product_delete');
     Route::get('admin/product/action', 'AdminProductController@action');
-    Route::post('admin/user/update/{id}', 'AdminProductController@update')->name('product_update');
+    Route::post('admin/product/update/{id}', 'AdminProductController@update')->name('product_update');
 });
 ######### END SYSTEM CONTROL  #########

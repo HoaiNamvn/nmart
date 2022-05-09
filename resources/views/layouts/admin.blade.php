@@ -67,30 +67,6 @@
                             ホームページ に移動
                         </a>
                     </li>
-                    {{-- ---------------------------DASHBOARD--------------------------- --}}
-                    <li class="nav-link {{ $module_active == 'dashboard' ? 'active' : '' }}">
-                        <a href="{{ url('dashboard') }}">
-                            <div class="nav-link-icon d-inline-flex">
-                                <i class="far fa-folder"></i>
-                            </div>
-                            Dashboard
-                        </a>
-                    </li>
-                    {{-- ---------------------------BAI VIET-------------------------------- --}}
-                    <li class="nav-link {{ $module_active == 'post' ? 'active' : '' }}">
-                        <a href="{{ url('admin/post/list') }}">
-                            <div class="nav-link-icon d-inline-flex">
-                                <i class="far fa-folder"></i>
-                            </div>
-                            ポスト
-                        </a>
-                        <i class="arrow fas fa-angle-right"></i>
-                        <ul class="sub-menu">
-                            <li><a href="{{ url('admin/post/add') }}">新規追加</a></li>
-                            <li><a href="{{ url('admin/post/list') }}">リスト</a></li>
-                            <li><a href="{{ url('admin/post/cat') }}">カテゴリー</a></li>
-                        </ul>
-                    </li>
 
                     {{-- ---------------------------SAN PHAM-------------------------------- --}}
                     <li class="nav-link {{ $module_active == 'product' ? 'active' : '' }}">
@@ -100,26 +76,14 @@
                             </div>
                             商品
                         </a>
-                        <i class="arrow fas fa-angle-down"></i>
+                        <i class="arrow fas fa-angle-right"></i>
                         <ul class="sub-menu">
                             <li><a href="{{ url('admin/product/add') }}">新規追加</a></li>
                             <li><a href="{{ url('admin/product/list') }}">リスト</a></li>
                             <li><a href="{{ url('admin/product/category') }}">カテゴリー</a></li>
                         </ul>
                     </li>
-                    {{-- ---------------------------BAN HANG-------------------------------- --}}
-                    <li class="nav-link {{ $module_active == 'order' ? 'active' : '' }}">
-                        <a href="{{ url('admin/order/list') }}">
-                            <div class="nav-link-icon d-inline-flex">
-                                <i class="far fa-folder"></i>
-                            </div>
-                            販売
-                        </a>
-                        <i class="arrow fas fa-angle-right"></i>
-                        <ul class="sub-menu">
-                            <li><a href="{{ url('admin/order/list') }}">オーダー</a></li>
-                        </ul>
-                    </li>
+
                     {{-- ---------------------------USER-------------------------------- --}}
 
                     <li class="nav-link {{ $module_active == 'user' ? 'active' : '' }}">
@@ -136,6 +100,48 @@
                             <li><a href="{{ url('admin/user/list') }}">リスト</a></li>
                         </ul>
                     </li>
+
+                    {{-- ---------------------------BAI VIET-------------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'post' ? 'active' : '' }}">
+                        <a href="{{ url('admin/post/list') }}">
+                            <div class="nav-link-icon d-inline-flex">
+                                <i class="far fa-folder"></i>
+                            </div>
+                            投稿
+                        </a>
+                        <i class="arrow fas fa-angle-right"></i>
+                        <ul class="sub-menu">
+                            <li><a href="{{ url('admin/post/add') }}">新規追加</a></li>
+                            <li><a href="{{ url('admin/post/list') }}">リスト</a></li>
+                            <li><a href="{{ url('admin/post/cat') }}">カテゴリー</a></li>
+                        </ul>
+                    </li>
+
+                    {{-- ---------------------------BAN HANG-------------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'order' ? 'active' : '' }}">
+                        <a href="{{ url('admin/order/list') }}">
+                            <div class="nav-link-icon d-inline-flex">
+                                <i class="far fa-folder"></i>
+                            </div>
+                            販売
+                        </a>
+                        <i class="arrow fas fa-angle-right"></i>
+                        <ul class="sub-menu">
+                            <li><a href="{{ url('admin/order/list') }}">オーダー</a></li>
+                        </ul>
+                    </li>
+
+                    {{-- ---------------------------DASHBOARD--------------------------- --}}
+                    <li class="nav-link {{ $module_active == 'dashboard' ? 'active' : '' }}">
+                        <a href="{{ url('dashboard') }}">
+                            <div class="nav-link-icon d-inline-flex">
+                                <i class="far fa-folder"></i>
+                            </div>
+                            Dashboard
+                        </a>
+                    </li>
+
+
 
                     <!-- <li class="nav-link"><a>Bài viết</a>
                         <ul class="sub-menu">

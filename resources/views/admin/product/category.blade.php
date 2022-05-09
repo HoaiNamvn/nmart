@@ -1,13 +1,14 @@
-@php
+{{-- @php
  $json_array  =json_decode($category_smart_phone, true);
 //  $elementCount  = count($json_array);
 echo "<pre>";
+print_r($json_array);
 print_r(count($json_array));
 echo "</pre>";
 
-@endphp
+@endphp --}}
 
-{{-- @extends('layouts.admin')
+@extends('layouts.admin')
 @section('content')
     <div id="content" class="container-fluid">
         <div class="row">
@@ -68,4 +69,4 @@ echo "</pre>";
         </div>
 
     </div>
-@endsection --}}
+@endsection

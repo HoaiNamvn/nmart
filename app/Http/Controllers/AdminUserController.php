@@ -144,11 +144,10 @@ class AdminUserController extends Controller
 
     function update($id, Request $request)
     {
-        return $request->input('name');
         $request->validate(
             [
-                'name' => ['required', 'string', 'max:255'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'name' => ['required', 'max:255'],
+                'password' => ['required', 'min:8', 'confirmed'],
             ],
             [
                 'required' => ':attribute が必要 ',
