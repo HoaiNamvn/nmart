@@ -14,7 +14,7 @@
 
 <body>
     <div id="warpper" class="nav-fixed">
-        <nav class="topnav shadow navbar-light bg-success d-flex">
+        <nav class="topnav shadow navbar-light bg-info d-flex">
             <div class="navbar-brand"><a href="?" style="color: black">システム管理</a></div>
             <div class="nav-right ">
                 <div class="btn-group mr-auto">

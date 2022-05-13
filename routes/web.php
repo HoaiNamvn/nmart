@@ -68,5 +68,9 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('product_delete');
     Route::get('admin/product/action', 'AdminProductController@action');
     Route::post('admin/product/update/{id}', 'AdminProductController@update')->name('product_update');
+
+    #--------------Post-Module------------------#
+    Route::get('admin/post/add', 'AdminPostController@add');
+    Route::post('admin/post/store', 'AdminPostController@store');
 });
 ######### END SYSTEM CONTROL  #########
