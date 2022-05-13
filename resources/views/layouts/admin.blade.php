@@ -113,12 +113,11 @@
                         <ul class="sub-menu">
                             <li><a href="{{ url('admin/post/add') }}">新規追加</a></li>
                             <li><a href="{{ url('admin/post/list') }}">リスト</a></li>
-                            <li><a href="{{ url('admin/post/cat') }}">カテゴリー</a></li>
                         </ul>
                     </li>
 
                     {{-- ---------------------------BAN HANG-------------------------------- --}}
-                    <li class="nav-link {{ $module_active == 'order' ? 'active' : '' }}">
+                    {{-- <li class="nav-link {{ $module_active == 'order' ? 'active' : '' }}">
                         <a href="{{ url('admin/order/list') }}">
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
@@ -129,7 +128,7 @@
                         <ul class="sub-menu">
                             <li><a href="{{ url('admin/order/list') }}">オーダー</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
 
                     {{-- ---------------------------DASHBOARD--------------------------- --}}
                     <li class="nav-link {{ $module_active == 'dashboard' ? 'active' : '' }}">

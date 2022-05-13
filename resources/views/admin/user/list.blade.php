@@ -49,6 +49,7 @@
                                 </th>
                                 <th scope="col">#</th>
                                 <th scope="col">名前</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">メール</th>
                                 <th scope="col">権</th>
                                 <th scope="col">作成日</th>
@@ -72,6 +73,7 @@
                                         </td>
                                         <th scope="row">{{ $t }}</th>
                                         <td>{{ $user->name }}</td>
+                                        <td>{{ $user->id }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>Admintrator</td>
                                         <td>{{ $user->created_at }}</td>

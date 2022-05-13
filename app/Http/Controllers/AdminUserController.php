@@ -55,6 +55,7 @@ class AdminUserController extends Controller
         return view('admin.user.list', compact('users', 'key', 'count', 'list_act', 'edit_delete_btn'));    // compact data to view
 
     }
+
     function add()
     {
         return view('admin.user.add');

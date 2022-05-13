@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function () {
     #--------------User-Module------------------#
     #user-list
     Route::get('admin/user/list', 'AdminUserController@list');
+    Route::get('admin/user/list/{id}', 'AdminUserController@listById');
     #user-add
     Route::get('admin/user/add', 'AdminUserController@add');
     Route::post('admin/user/store', 'AdminUserController@store');
@@ -72,5 +73,6 @@ Route::middleware('auth')->group(function () {
     #--------------Post-Module------------------#
     Route::get('admin/post/add', 'AdminPostController@add');
     Route::post('admin/post/store', 'AdminPostController@store');
+    Route::get('admin/post/list', 'AdminPostController@list');
 });
 ######### END SYSTEM CONTROL  #########

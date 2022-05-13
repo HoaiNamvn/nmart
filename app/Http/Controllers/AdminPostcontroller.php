@@ -18,6 +18,12 @@ class AdminPostcontroller extends Controller
             return $next($request);
         });
     }
+    function list()
+    {
+        $posts=post::all();
+        return view('admin.post.list', compact('posts'));
+    }
+
     function add()
     {
         return view('admin.post.add');
@@ -40,21 +46,17 @@ class AdminPostcontroller extends Controller
 
             ]
         );
-        $file = $request->file;
+        $file = $request->thumbnail;
         $file->move('public/images/', $file->getClientOriginalName());
         Post::create([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
-            'description' => $request->input('description'),
-            'category' => $request->input('category'),
-
-            'check_status' => $request->input('check_status'),
-            'status' => $request->input('status'),
+            'user_id' => $request->input('user_id'),
             'thumbnail' => 'images/' . $file->getClientOriginalName()
         ]);
 
 
 
-        return redirect('admin/product/list')->with('status', '商品の登録が完了しました。 ');
+        return redirect('admin/post/list')->with('status', '投稿が完了しました。 ');
     }
 }
