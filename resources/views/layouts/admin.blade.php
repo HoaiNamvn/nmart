@@ -15,17 +15,17 @@
 <body>
     <div id="warpper" class="nav-fixed">
         <nav class="topnav shadow navbar-light bg-info d-flex">
-            <div class="navbar-brand"><a href="?" style="color: black">システム管理</a></div>
+            <div class="navbar-brand"><a href="" style="color: black"><img src="{{asset('images/vmart.jpg')}}" width="80" height="50" alt=""></a></div>
             <div class="nav-right ">
                 <div class="btn-group mr-auto">
                     <button type="button" class="btn dropdown" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                        <i class="plus-icon fas fa-plus-circle"></i>
+                        <i class="fas fa-pencil-alt"></i>
                     </button>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ url('admin/user/add') }}">ユーザ登録</a>
                         <a class="dropdown-item" href="{{ url('admin/post/add') }}">新投稿</a>
-                        <a class="dropdown-item" href="{{ url('admin/post/product') }}">新商品登録</a>
-                        <a class="dropdown-item" href="{{ url('admin/order/list') }}">オーダー管理</a>
+                        <a class="dropdown-item" href="{{ url('admin/product/add') }}">新商品登録</a>
                     </div>
                 </div>
                 <div class="btn-group">
@@ -139,20 +139,6 @@
                             Dashboard
                         </a>
                     </li>
-
-
-
-                    <!-- <li class="nav-link"><a>Bài viết</a>
-                        <ul class="sub-menu">
-                            <li><a>Thêm mới</a></li>
-                            <li><a>Danh sách</a></li>
-                            <li><a>Thêm danh mục</a></li>
-                            <li><a>Danh sách danh mục</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-link"><a>Sản phẩm</a></li>
-                    <li class="nav-link"><a>Đơn hàng</a></li>
-                    <li class="nav-link"><a>Hệ thống</a></li> -->
 
                 </ul>
             </div>

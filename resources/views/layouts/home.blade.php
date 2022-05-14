@@ -21,6 +21,7 @@
     <div id="wrapper">
         <div id="header">
             <div class="container justify-content">
+                {{-- <a href="{{ url('esyo/home') }}"> <img src="{{asset('images/mart.jpg')}}" width="50" height="60" alt="" ></a> --}}
                 <a id="logo" href="{{ url('esyo/home') }}"><img src="{{ asset('home/images/lo-go.png') }}"
                         alt="写真がない" width="50" height="60"></a>
                 <!-- end-logo  -->
