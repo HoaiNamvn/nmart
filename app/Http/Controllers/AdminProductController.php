@@ -176,15 +176,4 @@ class AdminProductController extends Controller
             return  redirect('admin/product/list')->with('status', '１つレコード以以上を選択してください');
         }
     }
-    function category()
-    {
-        $category_smart_phone = Product::where('category', 'LIKE', "smart_phone")->get();
-        $category_smart_watch = Product::where('category', 'LIKE', "smart_watch")->get();
-        $category_camera = Product::where('category', 'LIKE', "camera")->get();
-        $category_laptop = Product::where('category', 'LIKE', "laptop")->get();
-        $category_tv = Product::where('category', 'LIKE', "tv")->get();
-        $category_fridge = Product::where('category', 'LIKE', "fridge")->get();
-        $category_washing_machine = Product::where('category', 'LIKE', "washing_machine")->get();
-        return view('admin.product.category', compact('category_smart_phone', 'category_smart_watch', 'category_laptop', 'category_tv', 'category_fridge', 'category_washing_machine','category_camera'));
-    }
 }

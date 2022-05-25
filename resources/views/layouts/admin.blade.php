@@ -80,7 +80,6 @@
                         <ul class="sub-menu">
                             <li><a href="{{ url('admin/product/add') }}">新規追加</a></li>
                             <li><a href="{{ url('admin/product/list') }}">リスト</a></li>
-                            <li><a href="{{ url('admin/product/category') }}">カテゴリー</a></li>
                         </ul>
                     </li>
 

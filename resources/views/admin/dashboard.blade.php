@@ -63,16 +63,16 @@
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <td>1212</td>
+                            <td>1211</td>
                             <td>
-                                Phan Văn Cương <br>
+                                Đoan Hoai Nam <br>
                                 0988859692
                             </td>
                             <td><a href="#">Samsung Galaxy A51 (8GB/128GB)</a></td>
                             <td>1</td>
-                            <td>7.790.000₫</td>
+                            <td>5万円</td>
                             <td><span class="badge badge-warning">処理中</span></td>
-                            <td>26:06:2020 14:00</td>
+                            <td>26:04:2022 14:00</td>
                             <td>
                                 <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button"
                                     data-toggle="tooltip" data-placement="top" title="Edit"><i
@@ -84,16 +84,16 @@
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>1213</td>
+                            <td>1212</td>
                             <td>
                                 Minh Anh <br>
                                 0868873382
                             </td>
                             <td><a href="#">Samsung Galaxy A51 (8GB/128GB)</a></td>
                             <td>1</td>
-                            <td>7.790.000₫</td>
+                            <td>4万５千円</td>
                             <td><span class="badge badge-warning">処理中</span></td>
-                            <td>26:06:2020 14:00</td>
+                            <td>26:04:2022 14:00</td>
                             <td>
                                 <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button"
                                     data-toggle="tooltip" data-placement="top" title="Edit"><i
@@ -105,16 +105,16 @@
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>1214</td>
+                            <td>1213</td>
                             <td>
-                                Trần Thu Hằng <br>
+                                Tran Thu Hang <br>
                                 0234343545
                             </td>
-                            <td><a href="#">Điện thoại iPhone 11 Pro Max 64GB</a></td>
+                            <td><a href="#"> iPhone 11 Pro Max 64GB</a></td>
                             <td>1</td>
-                            <td>29.490.000₫</td>
+                            <td>９万円</td>
                             <td><span class="badge badge-success">完成</span></td>
-                            <td>26:06:2020 14:00</td>
+                            <td>26:04:2022 14:05</td>
                             <td>
                                 <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button"
                                     data-toggle="tooltip" data-placement="top" title="Edit"><i
@@ -124,93 +124,9 @@
                                         class="fa fa-trash"></i></a>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>1212</td>
-                            <td>
-                                Tuấn Anh <br>
-                                091236768
-                            </td>
-                            <td><a href="#">Apple MacBook Pro Touch 2020 i5 512GB</a></td>
-                            <td>1</td>
-                            <td>47.990.000₫</td>
-                            <td><span class="badge badge-warning">処理中</span></td>
-                            <td>26:06:2020 14:00</td>
-                            <td>
-                                <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button"
-                                    data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                        class="fa fa-edit"></i></a>
-                                <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button"
-                                    data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                        class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>1214</td>
-                            <td>
-                                Trần Thu Hằng <br>
-                                0234343545
-                            </td>
-                            <td><a href="#">Điện thoại iPhone 11 Pro Max 64GB</a></td>
-                            <td>1</td>
-                            <td>29.490.000₫</td>
-                            <td><span class="badge badge-success">完成</span></td>
-                            <td>26:06:2020 14:00</td>
-                            <td>
-                                <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button"
-                                    data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                        class="fa fa-edit"></i></a>
-                                <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button"
-                                    data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                        class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>1212</td>
-                            <td>
-                                Tuấn Anh <br>
-                                091236768
-                            </td>
-                            <td><a href="#">Apple MacBook Pro Touch 2020 i5 512GB</a></td>
-                            <td>1</td>
-                            <td>47.990.000₫</td>
-                            <td><span class="badge badge-success">完成</span></td>
-                            <td>26:06:2020 14:00</td>
-                            <td>
-                                <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button"
-                                    data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                        class="fa fa-edit"></i></a>
-                                <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button"
-                                    data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                        class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-
                     </tbody>
                 </table>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">前へ</span>
-                                <span class="sr-only">後</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </div>
-
     </div>
 @endsection

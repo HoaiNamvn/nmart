@@ -56,14 +56,10 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/user/edit/{id}', 'AdminUserController@edit')->name('user_edit');
     Route::post('admin/user/update/{id}', 'AdminUserController@update')->name('user_update');
 
-    #--------------Order-Module------------------#
-    Route::get('admin/order/list', 'AdminOrderController@list');
-
     #--------------Product-Module------------------#
 
     Route::get('admin/product/list', 'AdminProductController@list')->name('product_list');
     Route::get('admin/product/add', 'AdminProductController@add');
-    Route::get('admin/product/category', 'AdminProductController@category');
     Route::get('admin/product/edit/{id}', 'AdminProductController@edit')->name('product_edit');
     Route::post('admin/product/store', 'AdminProductController@store');
     Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('product_delete');

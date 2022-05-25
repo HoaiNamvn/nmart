@@ -11,7 +11,7 @@
                     <th class="col-3">タイトル</th>
                     <th class="col-4">内容</th>
                     <a href=""></a>
-                    <th class="col-3">投稿日</th>
+                    <th class="col-3">投稿者ID</th>
                 </tr>
                 @php
                     $t = 0;
